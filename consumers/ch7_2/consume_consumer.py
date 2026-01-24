@@ -19,6 +19,9 @@ class ConsumeConsumer(BaseConsumer):
                 }
 
         self.consumer = Consumer(conf)
+        # 특정 topic을 컨슘하겠다고 구독하는 절차..
+        # on_assign -> on_assign 이벤트가 발생했을때 어떤 함수로 메세지를 처리할 것인지?
+        # 즉, 특정 컨슈머가 특정 파티션에 대해 컨슘할때 어떤 로깅형식을 뿌려줄 것인지..?
         self.consumer.subscribe(self.topics, on_assign=self.callback_on_assign)
 
 
