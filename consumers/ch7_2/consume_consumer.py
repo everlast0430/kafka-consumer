@@ -9,6 +9,7 @@ import time
 class ConsumeConsumer(BaseConsumer):
     def __init__(self, group_id):
         super().__init__(group_id)
+        # 여러 개의 topic을 consume할 수 있음
         self.topics = ['apis.seouldata.rt-bicycle']
 
         conf = {'bootstrap.servers': self.BOOTSTRAP_SERVERS,
