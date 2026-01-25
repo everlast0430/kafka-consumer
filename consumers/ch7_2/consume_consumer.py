@@ -28,6 +28,7 @@ class ConsumeConsumer(BaseConsumer):
     def poll(self):
         try:
             while True:
+	            # consume은 실제 브로커에서 메세지를 꺼내오겠다.
                 msg_lst = self.consumer.consume(num_messages=100)
                 if msg_lst is None or len(msg_lst) == 0: continue
 
