@@ -17,6 +17,7 @@ class ConsumeConsumer(BaseConsumer):
                 'auto.offset.reset': 'earliest',
                 'enable.auto.commit': 'false'
                 }
+        # enable.auto.commit은 default값이 true이므로, 직접 제어하기위해 false로 설정
 
         self.consumer = Consumer(conf)
         # 특정 topic을 컨슘하겠다고 구독하는 절차..

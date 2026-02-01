@@ -16,6 +16,7 @@ class PollConsumer(BaseConsumer):
                 'group.id': self.group_id,
                 'auto.offset.reset': 'earliest',
                 'enable.auto.commit': 'false'}
+                # enable.auto.commit은 default값이 true이므로, 직접 제어하기위해 false로 설정
 
         self.consumer = Consumer(conf)
         self.consumer.subscribe(self.topics, on_assign=self.callback_on_assign)
