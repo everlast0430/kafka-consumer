@@ -12,7 +12,7 @@ class AutoCommitConsumer(BaseConsumer):
 
         conf = {'bootstrap.servers': self.BOOTSTRAP_SERVERS,
                 'group.id': self.group_id,
-                'auto.offset.reset': 'latest',
+                'auto.offset.reset': 'latest', # 파티션에 저장되어있는 가장 마지막 offset을 읽고 처리를 하겠다.
                 'enable.auto.commit': 'true',
                 'auto.commit.interval.ms': '60000'         # 기본 값: 5000 (5초)
                 }
