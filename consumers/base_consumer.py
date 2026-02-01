@@ -1,6 +1,7 @@
 import logging
 from confluent_kafka import KafkaError, KafkaException
 
+# consumer 기본설정 공통
 class BaseConsumer():
     def __init__(self, group_id):
         self.BOOTSTRAP_SERVERS = 'kafka01:9092,kafka02:9092,kafka03:9092'
